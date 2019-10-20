@@ -55,8 +55,8 @@ export default {
     font-size: px2rem(22);
     .left {
       flex: 0 0 px2rem(60);
-      @include center;
-      // margin-left: px2rem(15);
+      @include left;
+      margin-left: px2rem(15);
     }
     .right {
       flex: 1;
