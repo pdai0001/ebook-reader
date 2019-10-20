@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <span class="text">ABCD</span>
     <router-view/>
   </div>
 </template>
@@ -16,10 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <style lang="scss" scoped>
-  @import "./assets/styles/global.scss";
-  .text {
-    font-family: 'Days One';
-    font-size: px2rem(20);
-    color:  #42b983;
+  #app {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
   }
 </style>
