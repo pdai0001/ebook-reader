@@ -6,7 +6,7 @@
         <div class="slide-bookmark-item-icon">
           <div class="icon-bookmark"></div>
         </div>
-        <div class="slide-bookmark-item-text">{{item.text}}</div>
+        <div class="slide-bookmark-item-text">{{ item.text }}</div>
       </div>
     </scroll>
   </div>

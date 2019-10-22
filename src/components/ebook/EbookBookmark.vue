@@ -4,7 +4,7 @@
       <div class="ebook-bookmark-down-wrapper" ref="iconDown">
         <span class="icon-down"></span>
       </div>
-      <div class="ebook-bookmark-text">{{text}}</div>
+      <div class="ebook-bookmark-text">{{ text }}</div>
     </div>
     <div class="ebook-bookmark-icon-wrapper" :style="isFixed ? fixedStyle : {}">
       <bookmark :color="color" :width="15" :height="35"></bookmark>
@@ -45,12 +45,16 @@ export default {
       if (!this.bookAvailable || this.menuVisible || this.settingVisible >= 0) {
         return
       }
+      // 状态2：未到达临界状态
       if (v >= this.height && v < this.threshold) {
         this.beforeThreshold(v)
+      // 状态3：超越临界状态
       } else if (v >= this.threshold) {
         this.afterThreshold(v)
+      // 状态1：未超过书签的高度
       } else if (v > 0 && v < this.height) {
         this.beforeHeight()
+      // 状态4：归位
       } else if (v === 0) {
         this.restore()
       }
@@ -127,7 +131,7 @@ export default {
       }
     },
     beforeThreshold (v) {
-      // 状态2：未到达零界状态
+      // 状态2：未到达临界状态
       this.$refs.bookmark.style.top = `${-v}px`
       this.beforeHeight()
       const iconDown = this.$refs.iconDown
@@ -136,7 +140,7 @@ export default {
       }
     },
     afterThreshold (v) {
-      // 状态3：超越零界状态
+      // 状态3：超越临界状态
       this.$refs.bookmark.style.top = `${-v}px`
       if (this.isBookmark) {
         this.text = this.$t('book.releaseDeleteMark')
