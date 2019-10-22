@@ -54,7 +54,6 @@ export default {
     },
     onProgressInput (progress) {
       this.setProgress(progress).then(() => {
-        this.displayProgress()
         this.updateProgressBg()
       })
     },
