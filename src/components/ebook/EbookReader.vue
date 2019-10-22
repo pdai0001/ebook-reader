@@ -234,7 +234,32 @@ export default {
       this.parseBook()
       this.book.ready.then(() => {
         return this.book.locations.generate(750 * (window.innerWidth / 375) * (getFontSize(this.fileName) / 16))
-      }).then(location => {
+      }).then(locations => {
+        this.navigation.forEach(nav => {
+          nav.pagelist = []
+        })
+        locations.forEach(item => {
+          const loc = item.match(/\[(.*)\]!/)[1]
+          this.navigation.forEach(nav => {
+            if (nav.href) {
+              // href格式：XXX.html
+              const href = nav.href.match(/^(.*)\.html$/)[1]
+              if (href === loc) {
+                nav.pagelist.push(item)
+              }
+            }
+          })
+          let currentPage = 1
+          this.navigation.forEach((nav, index) => {
+            if (index === 0) {
+              nav.page = 1
+            } else {
+              nav.page = currentPage
+            }
+            currentPage += nav.pagelist.length + 1
+          })
+        })
+        this.setPagelist(locations)
         this.setBookAvailable(true)
         this.refreshLocation()
       })

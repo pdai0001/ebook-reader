@@ -4,7 +4,7 @@
       <div class="ebook-bookmark-down-wrapper" ref="iconDown">
         <span class="icon-down"></span>
       </div>
-      <div class="ebook-bookmark-text">{{ text }}</div>
+      <div class="ebook-bookmark-text">{{text}}</div>
     </div>
     <div class="ebook-bookmark-icon-wrapper" :style="isFixed ? fixedStyle : {}">
       <bookmark :color="color" :width="15" :height="35"></bookmark>

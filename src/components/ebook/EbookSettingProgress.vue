@@ -40,21 +40,6 @@ export default {
   props: {
 
   },
-  computed: {
-    getSectionName () {
-      // if (this.section) {
-      //   const sectionInfo = this.currentBook.section(this.section)
-      //   if (sectionInfo && sectionInfo.href && this.currentBook && this.currentBook.navigation) {
-      //     return this.currentBook.navigation.get(sectionInfo.href).label
-      //   } else {
-      //     return ''
-      //   }
-      // } else {
-      //   return ''
-      // }
-      return this.section ? this.navigation[this.section].label : ''
-    }
-  },
   data () {
     return {
 
@@ -113,7 +98,7 @@ export default {
     position: absolute;
     bottom: px2rem(48);
     left: 0;
-    z-index: 101;
+    z-index: 160;
     width: 100%;
     height: px2rem(90);
     background: white;
