@@ -5,9 +5,8 @@
            :class="{'is-add': item.edit  ? item.edit === 1 : false}"
            v-for="(item, index) in categoryList"
            :key="index"
-           @click="onGroupClick(item)"
-           v-if="(item.edit === 2 && isInGroup) || item.edit !== 2 || !item.edit">
-        <div class="dialog-list-item-text">{{item.title}}</div>
+           @click="onGroupClick(item)">
+        <div class="dialog-list-item-text">{{ item.title }}</div>
         <div class="dialog-list-icon-wrapper" v-if="isInGroup && shelfCategory.id === item.id">
           <span class="icon-check"></span>
         </div>
@@ -15,7 +14,7 @@
     </div>
     <div class="dialog-new-group-wrapper" v-else>
       <div class="dialog-input-title-wrapper">
-        <span class="dialog-input-title">{{$t('shelf.groupName')}}</span>
+        <span class="dialog-input-title">{{ $t('shelf.groupName') }}</span>
       </div>
       <div class="dialog-input-wrapper">
         <div class="dialog-input-inner-wrapper">
@@ -27,7 +26,7 @@
       </div>
     </div>
     <div slot="btn" class="group-dialog-btn-wrapper">
-      <div class="dialog-btn" @click="hide">{{$t('shelf.cancel')}}</div>
+      <div class="dialog-btn" @click="hide">{{ $t('shelf.cancel') }}</div>
       <div class="dialog-btn" @click="createNewGroup" :class="{'is-empty': newGroupName && newGroupName.length === 0}"
            v-if="ifNewGroup">{{ $t('shelf.confirm') }}
       </div>
@@ -74,7 +73,7 @@ export default {
       return this.shelfList.filter(item => item.type === 2)
     },
     categoryList () {
-      return [...this.defaultCategory, ...this.category]
+      return [...this.defaultCategory, ...this.category].filter(item => (item.edit === 2 && this.isInGroup) || item.edit !== 2 || !item.edit)
     },
     title () {
       return !this.ifNewGroup ? this.$t('shelf.moveBook') : this.$t('shelf.newGroup')
