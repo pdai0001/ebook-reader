@@ -47,7 +47,7 @@ export default {
         })
       } else {
         this.setFileName(books.join('/')).then(() => {
-          const url = process.env.VUE_APP_RES_URL + '/epub/' + this.fileName + '.epub'
+          const url = process.env.VUE_APP_EPUB_URL + '/' + this.fileName + '.epub'
           this.initEpub(url)
         })
       }
@@ -254,9 +254,11 @@ export default {
           this.navigation.forEach(nav => {
             if (nav.href) {
               // href格式：XXX.html
-              const href = nav.href.match(/^(.*)\.html$/)[1]
-              if (href === loc) {
-                nav.pagelist.push(item)
+              const href = nav.href.match(/^(.*)\.html$/)
+              if (href) {
+                if (href[1] === loc) {
+                  nav.pagelist.push(item)
+                }
               }
             }
           })

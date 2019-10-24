@@ -24,7 +24,7 @@ const book = {
     'SET_FILENAME': (state, fileName) => {
       state.fileName = fileName
     },
-    'SET_MENUVISIBLE': (state, menuVisible) => {
+    'SET_MENU_VISIBLE': (state, menuVisible) => {
       state.menuVisible = menuVisible
     },
     'SET_SETTING_VISIBLE': (state, settingVisible) => {

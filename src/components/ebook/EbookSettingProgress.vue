@@ -58,7 +58,7 @@ export default {
       })
     },
     displayProgress () {
-      const cfi = this.currentBook.location.cfiFromPercentage(this.progress / 100)
+      const cfi = this.currentBook.locations.cfiFromPercentage(this.progress / 100)
       this.display(cfi)
     },
     updateProgressBg () {
