@@ -93,7 +93,11 @@ const messages = {
     statistic: '$1本公开阅读 • $2本私密阅读',
     startDownload: '开始下载...',
     progressDownload: '正在下载：$1',
-    downloadFirst: '请先缓存图书'
+    downloadFirst: '请先缓存图书',
+    welcome: '欢迎访问<br>Panda Reader Web书城<br>--------  作者：Nuggets  --------',
+    find: '去找书',
+    changeLanguage: '切换语言',
+    studyNow: 'GitHub'
   },
   detail: {
     copyright: '版权',

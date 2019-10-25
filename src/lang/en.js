@@ -93,7 +93,11 @@ const messages = {
     statistic: '$1 public reading • $2 private reading',
     startDownload: 'Start download...',
     progressDownload: 'Downloading：$1',
-    downloadFirst: 'Please download book first'
+    downloadFirst: 'Please download book first',
+    welcome: 'Welcome to<br>Panda Reader Web Book Store<br>--------  Author: Nuggets  --------',
+    find: 'Go to book store',
+    changeLanguage: 'Change Language',
+    studyNow: 'GitHub'
   },
   detail: {
     copyright: 'Copyright',
