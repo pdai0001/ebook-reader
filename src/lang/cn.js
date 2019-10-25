@@ -97,7 +97,7 @@ const messages = {
     welcome: '欢迎访问<br>Panda Reader Web书城<br>--------  作者：Nuggets  --------',
     find: '去找书',
     changeLanguage: '切换语言',
-    studyNow: 'GitHub'
+    studyNow: '我的书架'
   },
   detail: {
     copyright: '版权',

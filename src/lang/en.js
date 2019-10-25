@@ -97,7 +97,7 @@ const messages = {
     welcome: 'Welcome to<br>Panda Reader Web Book Store<br>--------  Author: Nuggets  --------',
     find: 'Go to book store',
     changeLanguage: 'Change Language',
-    studyNow: 'GitHub'
+    studyNow: 'My BookShelf'
   },
   detail: {
     copyright: 'Copyright',

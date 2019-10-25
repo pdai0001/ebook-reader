@@ -1,33 +1,52 @@
 <template>
-  <div class="book-shelf-empty-wrapper" ref="emptyView">
-    <div class="empty-img-wrapper">
-      <img class="empty-img" :src="img">
-    </div>
-    <div class="empty-text-wrapper">
-      <div class="empty-text" v-html="$t('shelf.welcome')"></div>
-    </div>
-    <div class="empty-btn-wrapper">
-      <div class="empty-btn" @click="gotoStudy">{{ $t('shelf.studyNow') }}</div>
-      <div class="empty-btn" @click="gotoBookStore">{{ $t('shelf.find') }}</div>
+  <div class="shelf-empty-bg-wrapper">
+    <span class="btn-text" @click="switchLocale">{{ $t('shelf.changeLanguage') }}</span>
+    <div class="book-shelf-empty-wrapper" ref="emptyView">
+      <div class="empty-img-wrapper">
+        <img class="empty-img" :src="img">
+      </div>
+      <div class="empty-text-wrapper">
+        <div class="empty-text" v-html="$t('shelf.welcome')"></div>
+      </div>
+      <div class="empty-btn-wrapper">
+        <div class="empty-btn" @click="gotoStudy">{{ $t('shelf.studyNow') }}</div>
+        <div class="empty-btn" @click="gotoBookStore">{{ $t('shelf.find') }}</div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { realPx } from '@/utils/utils'
+import { realPx } from '../../utils/utils'
+import { setLocalStorage } from '../../utils/localStorage'
+import { storeShelfMixin } from '../../utils/mixin'
 
 export default {
+  mixins: [storeShelfMixin],
   data () {
     return {
       img: require('@/assets/images/panda.jpg')
     }
   },
+  computed: {
+    lang () {
+      return this.$i18n.locale
+    }
+  },
   methods: {
     gotoBookStore () {
-      this.$router.push('/book-store/home')
+      this.$router.push('/store/home')
     },
     gotoStudy () {
-      window.location.href = 'https://github.com/pdai0001/ebook-reader'
+      this.$router.push('/store')
+    },
+    switchLocale () {
+      if (this.lang === 'en') {
+        this.$i18n.locale = 'cn'
+      } else {
+        this.$i18n.locale = 'en'
+      }
+      setLocalStorage('locale', this.$i18n.locale)
     }
   },
   mounted () {
@@ -38,6 +57,14 @@ export default {
 
 <style lang="scss" scoped>
   @import "../../assets/styles/global";
+  .btn-text {
+    position: absolute;
+    top: px2rem(8);
+    right: px2rem(8);
+    font-size: px2rem(16);
+    color: #333;
+    line-height: px2rem(30);
+  }
   .book-shelf-empty-wrapper {
     width: 100%;
     .empty-img-wrapper {

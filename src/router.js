@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect: '/store'
+    redirect: '/shelfEmpty'
   },
   {
     path: '/ebook',
@@ -48,6 +48,10 @@ const routes = [
         component: () => import('./views/store/StoreSpeaking.vue')
       }
     ]
+  },
+  {
+    path: '/shelfEmpty',
+    component: () => import('./components/shelf/ShelfEmpty.vue')
   }
 ]
 
