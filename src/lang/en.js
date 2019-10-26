@@ -96,7 +96,7 @@ const messages = {
     downloadFirst: 'Please download book first',
     welcome: 'Welcome to<br>Panda Reader Web Book Store<br>--------  Author: Nuggets  --------',
     find: 'Go to book store',
-    changeLanguage: 'Change Language',
+    changeLanguage: '切换语言',
     studyNow: 'My BookShelf'
   },
   detail: {

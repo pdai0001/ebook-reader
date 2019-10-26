@@ -96,7 +96,7 @@ const messages = {
     downloadFirst: '请先缓存图书',
     welcome: '欢迎访问<br>Panda Reader Web书城<br>--------  作者：Nuggets  --------',
     find: '去找书',
-    changeLanguage: '切换语言',
+    changeLanguage: 'Change Language',
     studyNow: '我的书架'
   },
   detail: {

@@ -57,60 +57,67 @@ export default {
 
 <style lang="scss" scoped>
   @import "../../assets/styles/global";
-  .btn-text {
+  .shelf-empty-bg-wrapper{
     position: absolute;
-    top: px2rem(8);
-    right: px2rem(8);
-    font-size: px2rem(16);
-    color: #333;
-    line-height: px2rem(30);
-  }
-  .book-shelf-empty-wrapper {
+    top: 0;
+    right: 0;
     width: 100%;
-    .empty-img-wrapper {
-      width: 100%;
-      margin-top: px2rem(50);
-      text-align: center;
-      .empty-img {
-        width: px2rem(200);
-        height: px2rem(200);
-      }
+    height: 100%;
+    background-color: white;
+    .btn-text {
+      position: absolute;
+      top: px2rem(8);
+      right: px2rem(8);
+      font-size: px2rem(16);
+      color: #333;
     }
-    .empty-text-wrapper {
+    .book-shelf-empty-wrapper {
       width: 100%;
-      margin-top: px2rem(10);
-      text-align: center;
-      padding: 0 px2rem(15);
-      box-sizing: border-box;
-      .empty-text {
-        font-size: px2rem(16);
-        color: #333;
-        line-height: px2rem(30);
-      }
-    }
-    .empty-btn-wrapper {
-      width: 100%;
-      padding: px2rem(30) px2rem(15) px2rem(15) px2rem(15);
-      box-sizing: border-box;
-      @include center;
-      .empty-btn {
+      .empty-img-wrapper {
         width: 100%;
-        font-size: px2rem(14);
-        font-weight: bold;
-        color: white;
-        padding: px2rem(15) 0;
+        margin-top: px2rem(50);
         text-align: center;
-        border-radius: px2rem(10);
-        background: $color-blue;
-        &:first-child {
-          margin-right: px2rem(7.5);
-          background: #C9394A;
+        .empty-img {
+          width: px2rem(200);
+          height: px2rem(200);
         }
-        &:last-child {
-          margin-left: px2rem(7.5);
+      }
+      .empty-text-wrapper {
+        width: 100%;
+        margin-top: px2rem(10);
+        text-align: center;
+        padding: 0 px2rem(15);
+        box-sizing: border-box;
+        .empty-text {
+          font-size: px2rem(16);
+          color: #333;
+          line-height: px2rem(30);
         }
-        &:active {
-          background: $color-blue-transparent;
+      }
+      .empty-btn-wrapper {
+        width: 100%;
+        padding: px2rem(30) px2rem(15) px2rem(15) px2rem(15);
+        box-sizing: border-box;
+        @include center;
+        .empty-btn {
+          width: 100%;
+          font-size: px2rem(14);
+          font-weight: bold;
+          color: white;
+          padding: px2rem(15) 0;
+          text-align: center;
+          border-radius: px2rem(10);
+          background: $color-blue;
+          &:first-child {
+            margin-right: px2rem(7.5);
+            background: #C9394A;
+          }
+          &:last-child {
+            margin-left: px2rem(7.5);
+          }
+          &:active {
+            background: $color-blue-transparent;
+          }
         }
       }
     }
